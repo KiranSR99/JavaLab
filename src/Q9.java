@@ -1,7 +1,11 @@
+import java.sql.SQLOutput;
+
 public class Q9 {
     public static void main(String[] args) {
-        for (int i=1;i<=100;i=i+2){
-            System.out.println(i);
+        System.out.println("Odd numbers between 1 to 30 are: ");
+        for (int i=1;i<=30;i++){
+            if (i%2!=0)
+                System.out.print(i+" ");
         }
     }
 }
