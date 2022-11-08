@@ -15,5 +15,21 @@ public class Q31 {
         for (int i=0; i<n; i++){
             System.out.print(array[i]+" ");
         }
+        System.out.print("\nEnter the element to delete: ");
+        int item  = sc.nextInt();
+
+        for(int i= 0; i<n; i++) {
+            if(item == array[i]){
+                array[i] = array[i+1];
+            }
+            else{
+                System.out.println(item+" not found in array.\n");
+                break;
+            }
+        }
+        System.out.println("Elements in array after deletion: ");
+        for(int i= 0; i<(n-1); i++) {
+            System.out.print(array[i]+" ");
+        }
     }
 }
