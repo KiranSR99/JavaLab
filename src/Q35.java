@@ -43,7 +43,7 @@ class StudentData
         Scanner sc = new Scanner(System.in);
         System.out.print("Student name: ");
         String name = sc.nextLine();
-        System.out.print("Sutdent ID: ");
+        System.out.print("Student ID: ");
         int id = sc.nextInt();
         System.out.print("Student age: ");
         int age = sc.nextInt();
