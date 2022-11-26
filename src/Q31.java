@@ -18,12 +18,15 @@ public class Q31 {
         System.out.print("\nEnter the element to delete: ");
         int item  = sc.nextInt();
 
-        for(int i= 0; i<n; i++) {
-            if(item == array[i]){
-                array[i] = array[i+1];
-            }
-            else{
-                System.out.println(item+" not found in array.\n");
+        for(int i=0; i<n; i++)
+        {
+            if(array[i] == item)   //If element found
+            {
+                // shifting elements
+                for(int j = i; j < n-1; j++)
+                {
+                    array[j] = array[j+1];
+                }
                 break;
             }
         }
