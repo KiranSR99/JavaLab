@@ -20,7 +20,7 @@ public class DisplayAll extends DatabaseConnect {
             //to print the resultset on console
             if(rs.next()){
                 do{
-                    System.out.println(rs.getString(2)+","+rs.getString(3)+","+rs.getString(4)+","+rs.getString(5));
+                    System.out.println(rs.getString(2)+"\t"+rs.getString(3)+"\t"+rs.getString(4)+"\t"+rs.getString(5));
                 }while(rs.next());
             }
             else{
