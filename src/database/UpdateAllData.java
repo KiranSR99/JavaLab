@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class UpdateAllData extends DatabaseConnect{
+public class UpdateAllData extends database.DatabaseConnect {
     public static void update(){
         Scanner sc = new Scanner(System.in);
         try{

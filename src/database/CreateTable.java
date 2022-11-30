@@ -3,7 +3,7 @@ package database;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class CreateTable extends DatabaseConnect{
+public class CreateTable extends database.DatabaseConnect {
     public static void tableCreation(){
         try{
             Connection conn = getConnection();

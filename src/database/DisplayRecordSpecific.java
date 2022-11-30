@@ -3,7 +3,7 @@ package database;
 import java.sql.*;
 import java.util.Scanner;
 
-public class DisplayRecordSpecific extends DatabaseConnect {
+public class DisplayRecordSpecific extends database.DatabaseConnect {
     public static void main(String[] args) {
         try{
             Scanner sc = new Scanner(System.in);

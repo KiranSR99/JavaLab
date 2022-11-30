@@ -4,7 +4,7 @@ package database;
 import java.sql.*;
 import java.util.Scanner;
 
-public class DeleteRecord extends DatabaseConnect{
+public class DeleteRecord extends database.DatabaseConnect {
     public static void delete(){
         Scanner sc = new Scanner(System.in);
         try{

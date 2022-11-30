@@ -1,19 +1,21 @@
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Scanner;
 
-public class DisplayAll extends DatabaseConnect {
+public class DisplayRecord extends database.DatabaseConnect {
     public static void main(String[] args) {
         try{
+            Scanner sc = new Scanner(System.in);
             Connection conn = getConnection();
             Statement smt=conn.createStatement();
 
-            //query to display all records from table employee
-            String q="Select * from student";
+            System.out.print("Enter name: ");
+            String fullname = sc.nextLine();
 
+            //query to display all records from table employee
+            String q="SELECT * FROM student WHERE fullname='"+fullname+"'";
+            
             //to execute query
             ResultSet rs=smt.executeQuery(q);
 

@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class InsertIntoTable extends DatabaseConnect{
+public class InsertIntoTable extends database.DatabaseConnect {
     public static void insert(){
         Scanner sc = new Scanner(System.in);
         try{

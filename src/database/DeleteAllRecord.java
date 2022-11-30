@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Scanner;
 
-public class DeleteAllRecord extends DatabaseConnect{
+public class DeleteAllRecord extends database.DatabaseConnect {
     public static void delete(){
         Scanner sc = new Scanner(System.in);
         try{
