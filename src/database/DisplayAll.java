@@ -1,17 +1,15 @@
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DisplayAll extends database.DatabaseConnect {
     public static void main(String[] args) {
+        Connection conn = null;
         try{
-            Connection conn = getConnection();
+            conn = getConnection();
             Statement smt=conn.createStatement();
 
-            //query to display all records from table employee
+            //query to display all records from table student
             String q="Select * from student";
 
             //to execute query
@@ -26,10 +24,17 @@ public class DisplayAll extends database.DatabaseConnect {
             else{
                 System.out.println("Record Not Found...");
             }
-            conn.close();
-        }
-        catch(Exception e){
+        } catch(Exception e){
             System.out.println(e);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    /* ignore */
+                }
+            }
         }
     }
+
 }

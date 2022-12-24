@@ -5,17 +5,18 @@ import java.util.Scanner;
 
 public class DisplayRecord extends database.DatabaseConnect {
     public static void main(String[] args) {
+        Connection conn = null;
         try{
             Scanner sc = new Scanner(System.in);
-            Connection conn = getConnection();
+            conn = getConnection();
             Statement smt=conn.createStatement();
 
             System.out.print("Enter name: ");
             String fullname = sc.nextLine();
 
-            //query to display all records from table employee
+            //query to display all records from table student
             String q="SELECT * FROM student WHERE fullname='"+fullname+"'";
-            
+
             //to execute query
             ResultSet rs=smt.executeQuery(q);
 
@@ -28,10 +29,17 @@ public class DisplayRecord extends database.DatabaseConnect {
             else{
                 System.out.println("Record Not Found...");
             }
-            conn.close();
-        }
-        catch(Exception e){
+        } catch(Exception e){
             System.out.println(e);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    /* ignore */
+                }
+            }
         }
     }
+
 }

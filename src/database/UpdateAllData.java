@@ -9,8 +9,9 @@ import java.util.Scanner;
 public class UpdateAllData extends database.DatabaseConnect {
     public static void update(){
         Scanner sc = new Scanner(System.in);
+        Connection conn = null;
         try{
-            Connection conn = getConnection();
+            conn = getConnection();
             PreparedStatement update = conn.prepareStatement("UPDATE student SET fullname=?, address=?, class=?, roll=?");
 
 //            System.out.print("Enter ID to edit data: ");
@@ -34,6 +35,13 @@ public class UpdateAllData extends database.DatabaseConnect {
             System.out.println(e);
         }
         finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    /* ignore */
+                }
+            }
             System.out.println("Data updated into table.");
         }
     }
